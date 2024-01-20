@@ -6,17 +6,19 @@ import time
 ######################################################################################################################################################################################################
 ######################################################################################################################################################################################################
 
-str = """Cocoas and Calenders
+str = """Personal Projects and Popcorn 
 
-Date: Jan 25 
+Date: Feb 6
 
 Time: 6PM - 7PM
 
 Location: CSE, Little, or L136
 
-Details: This event will be lead by Minuet as he gives a workshop on how to manage time well as a college student and how to be an organized student over hot cocoa.
+Details: Emily Jiji will be hosting a workshop about how to start your own personal project and eventually turn it into a startup. There will be popcorn and this event is interactive and social as well.
 
-Attendees: 25
+Attendees: 30
+
+
 """
 
 ######################################################################################################################################################################################################
@@ -53,6 +55,7 @@ dictData = {}
 
 # Print the list of split elements
 for elements in split_elements:
+    print(elements)
     if len(elements) == 1:
         dictData["EventName"] = elements[0]
     else:
@@ -84,7 +87,7 @@ path_to_chromedriver = '/Users/tina/Desktop/WiCSE/chromedriver'  # e.g., '/Users
 web = webdriver.Chrome(executable_path=path_to_chromedriver)
 web.get('https://docs.google.com/forms/d/e/1FAIpQLSd06SPaVb5FATgwpmv0taz9mJQiqLrmde0dkZjKvNvrSDvlhQ/viewform')
 
-time.sleep(2)
+time.sleep(1)
 
 myEmail = 'tinac.592@yahoo.com'
 email = web.find_element('xpath', '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div[1]/div[2]/div[1]/div/div[1]/input')
@@ -116,3 +119,8 @@ roomPref.send_keys(location)
 speakerQNo = web.find_element('xpath','//*[@id="mG61Hd"]/div[2]/div/div[2]/div[9]/div/div/div[2]/div[1]/div/span/div/div[2]/label/div/div[2]/div/span')
 speakerQNo.click()
 
+nextButton = web.find_element('xpath','//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div[1]/div/span/span')
+nextButton.click()
+
+submitButton = web.find_element('xpath','//*[@id="mG61Hd"]/div[2]/div/div[3]/div[3]/div[1]/div[2]/span/span')
+submitButton.click()
